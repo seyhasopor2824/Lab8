@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Simple Calculator</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+    </head>
+    <body class="bg-gradient-to-br from-purple-400 via-pink-500 to-red-500 min-h-screen flex items-center justify-center p-4">
+        <div class="bg-gray-900 rounded-3xl shadow-2xl p-6 w-full max-w-sm">
+            <!-- Display Screen -->
+            <div class="bg-gray-800 rounded-2xl p-4 mb-6 shadow-inner">
+                <div id="display" class="text-white text-right text-4xl font-light overflow-hidden whitespace-nowrap">0</div>
+            </div>
+
+            <!-- Calculator Buttons -->
+            <div class="grid grid-cols-4 gap-3">
+                <!-- Row 1 -->
+                <button onclick="clearDisplay()" class="bg-gray-600 hover:bg-gray-500 text-white font-semibold py-4 rounded-xl transition-all duration-200 active:scale-95 col-span-2">AC</button>
+                <button onclick="deleteLast()" class="bg-gray-600 hover:bg-gray-500 text-white font-semibold py-4 rounded-xl transition-all duration-200 active:scale-95">DEL</button>
+                <button onclick="appendOperator('/')" class="bg-orange-500 hover:bg-orange-400 text-white font-semibold py-4 rounded-xl transition-all duration-200 active:scale-95">÷</button>
+
+                <!-- Row 2 -->
+                <button onclick="appendNumber('7')" class="bg-gray-700 hover:bg-gray-600 text-white font-semibold py-4 rounded-xl transition-all duration-200 active:scale-95">7</button>
+                <button onclick="appendNumber('8')" class="bg-gray-700 hover:bg-gray-600 text-white font-semibold py-4 rounded-xl transition-all duration-200 active:scale-95">8</button>
+                <button onclick="appendNumber('9')" class="bg-gray-700 hover:bg-gray-600 text-white font-semibold py-4 rounded-xl transition-all duration-200 active:scale-95">9</button>
+                <button onclick="appendOperator('*')" class="bg-orange-500 hover:bg-orange-400 text-white font-semibold py-4 rounded-xl transition-all duration-200 active:scale-95">×</button>
+
+                <!-- Row 3 -->
+                <button onclick="appendNumber('4')" class="bg-gray-700 hover:bg-gray-600 text-white font-semibold py-4 rounded-xl transition-all duration-200 active:scale-95">4</button>
+                <button onclick="appendNumber('5')" class="bg-gray-700 hover:bg-gray-600 text-white font-semibold py-4 rounded-xl transition-all duration-200 active:scale-95">5</button>
+                <button onclick="appendNumber('6')" class="bg-gray-700 hover:bg-gray-600 text-white font-semibold py-4 rounded-xl transition-all duration-200 active:scale-95">6</button>
+                <button onclick="appendOperator('-')" class="bg-orange-500 hover:bg-orange-400 text-white font-semibold py-4 rounded-xl transition-all duration-200 active:scale-95">−</button>
+
+                <!-- Row 4 -->
+                <button onclick="appendNumber('1')" class="bg-gray-700 hover:bg-gray-600 text-white font-semibold py-4 rounded-xl transition-all duration-200 active:scale-95">1</button>
+                <button onclick="appendNumber('2')" class="bg-gray-700 hover:bg-gray-600 text-white font-semibold py-4 rounded-xl transition-all duration-200 active:scale-95">2</button>
+                <button onclick="appendNumber('3')" class="bg-gray-700 hover:bg-gray-600 text-white font-semibold py-4 rounded-xl transition-all duration-200 active:scale-95">3</button>
+                <button onclick="appendOperator('+')" class="bg-orange-500 hover:bg-orange-400 text-white font-semibold py-4 rounded-xl transition-all duration-200 active:scale-95">+</button>
+
+                <!-- Row 5 -->
+                <button onclick="appendNumber('0')" class="bg-gray-700 hover:bg-gray-600 text-white font-semibold py-4 rounded-xl transition-all duration-200 active:scale-95 col-span-2">0</button>
+                <button onclick="appendNumber('.')" class="bg-gray-700 hover:bg-gray-600 text-white font-semibold py-4 rounded-xl transition-all duration-200 active:scale-95">.</button>
+                <button onclick="calculate()" class="bg-green-500 hover:bg-green-400 text-white font-semibold py-4 rounded-xl transition-all duration-200 active:scale-95">=</button>
+            </div>
+        </div>
+        <script src="calculator.js"></script>
+    </body>
+</html>
